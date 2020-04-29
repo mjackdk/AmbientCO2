@@ -1,0 +1,3 @@
+CozirAmbient	KEYWORD1
+read		KEYWORD2
+write		KEYWORD2
