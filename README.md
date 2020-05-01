@@ -2,12 +2,11 @@
 Arduino library for CozIR Ambient CO2 sensor
 
 # Installation
-1. Download [zip file](https://github.com/mjackdk/CozirAmbient/archive/master.zip)
-   from GitHub
-2. Rename zip file from "CozirAmbient-master.zip" to "CozirAmbient.zip"
-3. In Arduino IDE, use Sketch -> Include Library -> Add .ZIP Library... 
-   to select  "CozirAmbient.zip"
-4. Restart Arduino IDE
+1. Download library [zip file](https://github.com/mjackdk/CozirAmbient/archive/master.zip)
+   from GitHub, and extract it
+2. Rename resulting folder from "CozirAmbient-master" to "CozirAmbient"
+3. Move folder "CozirAmbient" into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries) 
+4. Restart Arduino IDE, if running
 
 # Usage
 
