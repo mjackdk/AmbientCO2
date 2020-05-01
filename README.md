@@ -1,14 +1,25 @@
 # CozirAmbient
-Arduino library for CozIR Ambient CO2 sensor
+An Arduino library for the CozIR Ambient CO2 sensor
+
+The CozIR Ambient family of sensors all provide CO2 measurements, at different ranges. Some are able to measure temperature and relative humidity as well.
+
+This library is developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino Uno R3** board.
+
 
 # Installation
 1. Download library [zip file](https://github.com/mjackdk/CozirAmbient/archive/master.zip)
    from GitHub, and extract it
 2. Rename resulting folder from "CozirAmbient-master" to "CozirAmbient"
-3. Move folder "CozirAmbient" into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries) 
+3. Move folder "CozirAmbient" into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
 4. Restart Arduino IDE, if running
 
+
 # Usage
+1. Examples are available under File -> Examples -> CozirAmbient in Arduino IDE
+2. Change Rx and Tx pins in the sketch to match your setup
+3. Connect 3.3V, GND, Rx and Tx between board and sensor
+4. Upload sketch
+5. Open Serial Monitor
 
 # Documentation
 * [Product page](https://www.co2meter.com/collections/0-1-co2/products/cozir-ambient-5000-ppm-co2-sensor)
@@ -17,12 +28,14 @@ Arduino library for CozIR Ambient CO2 sensor
 * [Application Note](http://co2meters.com/Documentation/AppNotes/AN128-COZIRWR-arduino-uart.pdf)
   and [sample code](http://co2meters.com/Documentation/AppNotes/AN128-COZIRWR-arduino-uart.zip)
 
+
 # Inspiration
+
 ## Arduino Libraries
 
-* https://www.sparkfun.com/news/2194
-* https://www.sparkfun.com/news/3245
-* https://www.arduino.cc/en/Hacking/LibraryTutorial
-* https://www.arduino.cc/en/Reference/APIStyleGuide
+* [Writing a Library for Arduino](https://www.arduino.cc/en/Hacking/LibraryTutorial)
+* [Arduino Style Guide for Writing Libraries](https://www.arduino.cc/en/Reference/APIStyleGuide)
+* [How to Write A Great Arduino Library](https://www.sparkfun.com/news/3245)
 
-## Serial communication
+## Making Libraries generic
+* [Genericizing Arduino Libraries](https://www.sparkfun.com/news/2194)
