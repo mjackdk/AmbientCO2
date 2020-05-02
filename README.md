@@ -1,11 +1,11 @@
 # CozirAmbient
-*An Arduino library for the CozIR Ambient CO2 sensor*
+*Arduino library for CozIR Ambient CO2 sensors*
 
 The CozIR Ambient family of sensors all provide CO2 measurements,
 at different ranges. Some are able to measure temperature and relative humidity
-as well. The sensors use serial UART and (optional) analog voltage output.
+as well. The sensors use serial UART and analog voltage output.
 
-This library is developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino Uno R3** board.
+This library is developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and a **Arduino Uno R3** board.
 
 
 # Installation
@@ -33,11 +33,11 @@ This library is developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor
 
 # Inspiration
 
-## Arduino Libraries
+## Arduino libraries
 
 * [Writing a Library for Arduino](https://www.arduino.cc/en/Hacking/LibraryTutorial)
 * [Arduino Style Guide for Writing Libraries](https://www.arduino.cc/en/Reference/APIStyleGuide)
 * [How to Write A Great Arduino Library](https://www.sparkfun.com/news/3245)
 
-## Making Libraries generic
+## Generic Arduino libraries
 * [Genericizing Arduino Libraries](https://www.sparkfun.com/news/2194)
