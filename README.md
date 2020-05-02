@@ -8,8 +8,8 @@ This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** 
 
 # Installation
 1. Download library [zip file](https://github.com/mjackdk/CozirAmbient/archive/master.zip) from GitHub, and extract it
-2. Rename resulting folder from "CozirAmbient-master" to "CozirAmbient"
-3. Move folder "CozirAmbient" into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
+2. Rename resulting folder from *CozirAmbient-master* to *CozirAmbient*
+3. Move folder *CozirAmbient* into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
 4. Restart Arduino IDE, if running
 
 
