@@ -20,6 +20,11 @@ This library is developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor
 4. Upload sketch
 5. Open Serial Monitor
 
+![Cozir Ambient pins](images/CozirAmbientPins.png)
+
+(Illustration from User's Manual, page 7)
+
+
 # Documentation
 * [Product page](https://www.co2meter.com/collections/0-1-co2/products/cozir-ambient-5000-ppm-co2-sensor)
 * [Data sheet](https://cdn.shopify.com/s/files/1/0019/5952/files/Datasheet_COZIR_A_CO2Meter_4_15.pdf)
