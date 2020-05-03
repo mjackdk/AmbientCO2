@@ -1,4 +1,4 @@
-# CozirAmbient
+# AmbientCO2
 *Arduino library for CozIR Ambient CO2 sensors*
 
 The CozIR Ambient family of sensors all provide CO2 measurements, at different ranges. Some are able to measure temperature and relative humidity as well. The sensors use serial UART and analog voltage output.
@@ -7,14 +7,14 @@ This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** 
 
 
 # Installation
-1. Download library [zip file](https://github.com/mjackdk/CozirAmbient/archive/master.zip) from GitHub, and extract it
-2. Rename resulting folder from *CozirAmbient-master* to *CozirAmbient*
-3. Move folder *CozirAmbient* into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
+1. Download library [zip file](https://github.com/mjackdk/AmbientCO2/archive/master.zip) from GitHub, and extract it
+2. Rename resulting folder from *AmbientCO2-master* to *AmbientCO2*
+3. Move folder *AmbientCO2* into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
 4. Restart Arduino IDE, if running
 
 
 # Usage
-1. Examples are available under File -> Examples -> CozirAmbient in Arduino IDE
+1. Examples are available under File -> Examples -> AmbientCO2 in Arduino IDE
 2. Change Rx and Tx pins in the sketch to match your setup
 3. Connect 3.3V, GND, Rx and Tx between board and sensor
 4. Upload sketch
