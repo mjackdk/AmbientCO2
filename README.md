@@ -3,7 +3,7 @@
 
 The CozIR Ambient family of sensors all provide CO2 measurements, at different ranges. Some are able to measure temperature and relative humidity as well. The sensors use serial UART and analog voltage output.
 
-This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino Uno R3** board.
+This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino UNO R3** board.
 
 # Development
 
@@ -12,7 +12,7 @@ Milestone | Features | Version
 Beta | Basic reading| 0.x.x
 Launch | Modes, settings | 1.x.x
 Sensors | Range, CO2, relative humidity, temperature | 2.x.x
-Boards | Arduino Uno, Due, Mega | 3.x.x  
+Boards | Arduino UNO, Due, MEGA | 3.x.x  
 
 # Installation
 1. Download library [zip file](https://github.com/mjackdk/AmbientCO2/archive/master.zip) from GitHub, and extract it

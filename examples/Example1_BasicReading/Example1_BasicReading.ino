@@ -8,9 +8,9 @@ const byte txPin = 11;
   #include <SoftwareSerial.h>
   SoftwareSerial mySerial(rxPin, txPin);
 #elif defined(ARDUINO_AVR_MEGA2560)
-
+  // MEGA specific code
 #elif defined(ARDUINO_SAM_DUE)
-
+// Due specific code
 #else
   #error Unsupported hardware
 #endif
