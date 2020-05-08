@@ -5,6 +5,14 @@ The CozIR Ambient family of sensors all provide CO2 measurements, at different r
 
 This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino Uno R3** board.
 
+# Development
+
+Milestone | Features | Version
+-------- | -------- | --------
+Beta | Basic reading| 0.x.x
+Launch | Modes, settings | 1.x.x
+Sensors | Range, CO2, relative humidity, temperature | 2.x.x
+Boards | Arduino Uno, Due, Mega | 3.x.x  
 
 # Installation
 1. Download library [zip file](https://github.com/mjackdk/AmbientCO2/archive/master.zip) from GitHub, and extract it
@@ -15,10 +23,18 @@ This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** 
 
 # Usage
 1. Examples are available under File -> Examples -> AmbientCO2 in Arduino IDE
-2. Change Rx and Tx pins in the sketch to match your setup
-3. Connect 3.3V, GND, Rx and Tx between board and sensor
+2. Change rxPin and txPin in the sketch to match your setup
+3. Connect GND, 3.3V, rxPin and txPin between board and sensor (see [User's Manual](http://co2meters.com/Documentation/Manuals/Manual_GC_0024_0025_0026_Revised8.pdf), page 7, for sensor pinout)
+
+Board | Sensor
+-------- | --------
+GND | Pin 1
+3.3V | Pin 3
+rxPin | Pin 7
+txPin | Pin 5
+
 4. Upload sketch
-5. Open Serial Monitor
+5. Open Serial Monitor or Serial Plotter in Arduino IDE
 
 
 # Sensor Documentation

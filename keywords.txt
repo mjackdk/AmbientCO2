@@ -7,4 +7,6 @@ AmbientCO2	KEYWORD1
 FUNCTIONS
 ==================================
 begin	KEYWORD2
-readCO2	KEYWORD2
+available	KEYWORD2
+read	KEYWORD2
+getCO2	KEYWORD2

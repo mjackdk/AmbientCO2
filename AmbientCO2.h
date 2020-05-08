@@ -1,15 +1,17 @@
 #ifndef AmbientCO2_h
 #define AmbientCO2_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class AmbientCO2 {
   public:
-    AmbientCO2();
-    bool begin();
-    int readCO2();
+    AmbientCO2(void);
+    void begin(Stream &serialPort = Serial);
+    byte available();
+    char read();
+    float getCO2();
   private:
-    //
+    Stream *_mySerial;
 };
 
 #endif
