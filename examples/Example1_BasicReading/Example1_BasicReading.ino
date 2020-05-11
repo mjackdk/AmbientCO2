@@ -5,7 +5,7 @@ AmbientCO2 myAmbient;
 const byte rxPin = 10;
 const byte txPin = 11;
 
-// Ambient CO2 sensor UART only supports baud rate 9600, do not change!
+// Ambient CO2 sensor UART only supports baud rate 9600, don't change!
 const int baudRate = 9600;
 
 // Include proper library, based on board type
