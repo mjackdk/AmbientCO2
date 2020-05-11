@@ -5,6 +5,9 @@ AmbientCO2 myAmbient;
 const byte rxPin = 10;
 const byte txPin = 11;
 
+// Ambient CO2 sensor UART only supports baud rate 9600, do not change!
+const int baudRate = 9600;
+
 // Include proper library, based on board type
 #if defined(ARDUINO_AVR_UNO)
   #include <SoftwareSerial.h>
@@ -19,9 +22,8 @@ const byte txPin = 11;
 
 void setup() {
 
-  // Ambient CO2 sensor UART only supports baud rate 9600
-  Serial.begin(9600);
-  mySerial.begin(9600);
+  Serial.begin(baudRate);
+  mySerial.begin(baudRate);
   myAmbient.begin(mySerial);
 
 }
