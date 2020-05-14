@@ -1,3 +1,10 @@
+/*
+  AmbientCO2.h - Arduino library for CozIR Ambient CO2 sensors.
+  Created by Michael Jack, April, 2020.
+  Repository https://github.com/mjackdk/AmbientCO2
+  Released under MIT license.
+*/
+
 #ifndef AmbientCO2_h
 #define AmbientCO2_h
 
@@ -5,13 +12,16 @@
 
 class AmbientCO2 {
   public:
-    AmbientCO2(void);
-    void begin(Stream &serialPort = Serial); // Defaults to Serial
-    byte available();
-    char read();
-    float getCO2(); // Type 'float', since max value is 99999 * 10
+    AmbientCO2(Stream &serialPort = Serial); // Default to Serial
+    void begin();
+    int getCO2();
   private:
-    Stream *_mySerial;
+    Stream *_serial;
+    int _buffer[16];
+    int _index;
+    int _value;
+    void fillBuffer();
+    int parseBuffer();
 };
 
 #endif

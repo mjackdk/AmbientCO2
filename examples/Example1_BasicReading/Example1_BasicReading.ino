@@ -1,38 +1,51 @@
-#include <AmbientCO2.h>
-AmbientCO2 myAmbient;
+/*
 
-// Modify to suit board setup
+ Example1_BasicReading.ino
+
+ This sketch shows how to use the AmbientCO2 library to get CO2 readings
+ from a CozIR Ambient CO2 sensor using serial UART.
+
+ Arduino --- sensor
+ ------------------
+ GND ------- Pin 1
+ 3.3V ------ Pin 3
+ rxPin ----- Pin 7
+ txPin ----- Pin 5
+
+ See User's Manual, page 7, for sensor pinout
+ http://co2meters.com/Documentation/Manuals/Manual_GC_0024_0025_0026_Revised8.pdf
+
+ Open Serial Moniter or Serial Plotter in Arduino IDE after uploading sketch.
+
+ Created by Michael Jack, April, 2020.
+ Repository https://github.com/mjackdk/AmbientCO2
+ Released under MIT license.
+
+*/
+
+#include <SoftwareSerial.h> // Arduino UNO
+#include <AmbientCO2.h>
+
+// Change to match board setup
 const byte rxPin = 10;
 const byte txPin = 11;
 
-// Ambient CO2 sensor UART only supports baud rate 9600, don't change!
+// Do NOT change, Ambient sensors only support 9600
 const int baudRate = 9600;
 
-// Include proper library, based on board type
-#if defined(ARDUINO_AVR_UNO)
-  #include <SoftwareSerial.h>
-  SoftwareSerial mySerial(rxPin, txPin);
-#elif defined(ARDUINO_AVR_MEGA2560)
-  // MEGA specific code
-#elif defined(ARDUINO_SAM_DUE)
-  // Due specific code
-#else
-  #error Unsupported hardware
-#endif
+SoftwareSerial mySerial(rxPin, txPin); // Arduino UNO
+
+AmbientCO2 myAmbient(mySerial);
+
+int co2 = 0;
 
 void setup() {
-
   Serial.begin(baudRate);
   mySerial.begin(baudRate);
-  myAmbient.begin(mySerial);
-
+  myAmbient.begin();
 }
 
 void loop() {
-
-  // Wait for data, write out data to Serial port, one char at a time
-  if (myAmbient.available()) {
-    Serial.print(myAmbient.read()); // Example: 'Z 00678'
-  }
-
+  co2 = myAmbient.getCO2();
+  Serial.println(co2);
 }
