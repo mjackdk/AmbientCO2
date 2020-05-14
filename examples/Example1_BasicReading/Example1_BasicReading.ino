@@ -3,7 +3,7 @@
  Example1_BasicReading.ino
 
  This sketch shows how to use the AmbientCO2 library to get CO2 readings
- from a CozIR Ambient CO2 sensor using serial UART.
+ from a CozIR Ambient CO2 sensor in streaming mode, using serial UART.
 
  Arduino --- sensor
  ------------------
