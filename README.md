@@ -15,15 +15,22 @@ Sensors | Range, CO2, relative humidity, temperature | 2.x.x |
 Boards | Arduino UNO, Due, MEGA | 3.x.x |
 
 # Installation
+
+## Library Manager
+1. Open Tools -> Manage Libraries... in Arduino IDE
+2. Search for *AmbientCO2*
+3. Install latest version
+
+## Manual
 1. Download library [zip file](https://github.com/mjackdk/AmbientCO2/archive/master.zip) from GitHub, and extract it
 2. Rename resulting folder from *AmbientCO2-master* to *AmbientCO2*
-3. Move folder *AmbientCO2* into your Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
+3. Move folder *AmbientCO2* into the Arduino IDE [libraries folder](https://www.arduino.cc/en/Guide/Libraries)
 4. Restart Arduino IDE, if running
 
 
 # Usage
 1. Examples are available under File -> Examples -> AmbientCO2 in Arduino IDE
-2. Change rxPin and txPin in the sketch to match your setup
+2. Change rxPin and txPin in the sketch to match board setup
 3. Connect GND, 3.3V, rxPin and txPin between board and sensor (see [User's Manual](http://co2meters.com/Documentation/Manuals/Manual_GC_0024_0025_0026_Revised8.pdf), page 7, for sensor pinout)
 
 Board | Sensor
