@@ -7,12 +7,12 @@ This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** 
 
 # Development
 
-Milestone | Features | Version
--------- | -------- | --------
-Beta | Basic reading| 0.x.x
-Launch | Modes, settings | 1.x.x
-Sensors | Range, CO2, relative humidity, temperature | 2.x.x
-Boards | Arduino UNO, Due, MEGA | 3.x.x  
+Milestone | Features | Version | Status
+-------- | -------- | -------- | --------
+Beta | Basic reading | 0.x.x | :heavy_check_mark:
+Launch | Modes, settings | 1.x.x |
+Sensors | Range, CO2, relative humidity, temperature | 2.x.x |
+Boards | Arduino UNO, Due, MEGA | 3.x.x |
 
 # Installation
 1. Download library [zip file](https://github.com/mjackdk/AmbientCO2/archive/master.zip) from GitHub, and extract it
