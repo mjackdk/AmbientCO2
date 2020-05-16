@@ -17,6 +17,7 @@ class AmbientCO2 {
     int getCO2();
   private:
     Stream *_serial;
+    bool _setup;
     int _buffer[16];
     int _index;
     int _value;

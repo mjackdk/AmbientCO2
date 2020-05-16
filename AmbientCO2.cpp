@@ -10,11 +10,17 @@
 // Constructor
 AmbientCO2::AmbientCO2(Stream &serialPort) {
   _serial = &serialPort;
+  _setup = false;
 }
 
 // Set up initial state
 void AmbientCO2::begin() {
-  delay(1000); // Let sensor warm up
+
+  // Only run begin() once
+  if (_setup == false) {
+    delay(1000);  // Let sensor warm up
+    _setup = true;
+  }
 }
 
 int AmbientCO2::getCO2() {
@@ -37,9 +43,9 @@ void AmbientCO2::fillBuffer() {
 int AmbientCO2::parseBuffer() {
   _value = 0;
 
-  for (byte j = 7; j > 2; j--) { // Buffer contains e.g. ' Z 00567'
+  for (byte j = 7; j > 2; j--) { // Buffer contains e.g. ASCII ' Z 00567' in hex
     _value += (_buffer[j] - 0x30) * pow(10, 7 - j); // Subtract 0, multiply by proper power of 10
   }
 
-  return _value; // Value contains e.g '567'
+  return _value; // Value contains e.g '567' as int
 }
