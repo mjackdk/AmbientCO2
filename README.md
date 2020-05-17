@@ -14,6 +14,21 @@ Launch | Modes, settings | 1.x.x |
 Sensors | Range, CO2, relative humidity, temperature | 2.x.x |
 Boards | Arduino UNO, Due, MEGA | 3.x.x |
 
+# Library Documentation
+
+Add the following line to use this libraray:
+``` c++
+#include <AmbientCO2.h>
+```
+## Functions
+Name | Parameters | Returns | Description
+-------- | -------- | -------- | --------
+AmbientCO2() | Stream &serial | void | Constructor
+begin() | none | void | Sensor setup
+getCO2() | none | int | Reads CO2 concentration in PPM
+
+## Limitations
+From [SoftwareSerial reference](https://www.arduino.cc/en/Reference/SoftwareSerial): If using multiple software serial ports, only one can receive data at a time.
 # Installation
 
 ## Library Manager
