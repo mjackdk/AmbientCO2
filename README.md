@@ -28,9 +28,12 @@ Add the following line to use this libraray:
 
 Name | Parameters | Returns | Description
 -------- | -------- | -------- | --------
-AmbientCO2() | Stream &serial | void | Constructor
-begin() | none | void | Sensor setup
+AmbientCO2() | void | void | Constructor
+begin() | Stream &serialPort | bool | Sensor setup, defaults to streaming mode
 getCO2() | none | int | Reads CO2 concentration in PPM
+getMode() | none | int | Returns sensor mode
+isConnected() | none | bool | Checks sensor connection
+setMode() | int | bool | 0 (command), 1 (streaming) or 2 (poll)
 
 ## Limitations
 
@@ -86,7 +89,5 @@ txPin | Pin 5
 * [Writing a Library for Arduino](https://www.arduino.cc/en/Hacking/LibraryTutorial)
 * [Arduino Style Guide for Writing Libraries](https://www.arduino.cc/en/Reference/APIStyleGuide)
 * [How to Write A Great Arduino Library](https://www.sparkfun.com/news/3245)
-
-## Generic Arduino Libraries
 
 * [Genericizing Arduino Libraries](https://www.sparkfun.com/news/2194)
