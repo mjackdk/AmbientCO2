@@ -13,7 +13,7 @@ AmbientCO2::AmbientCO2(void) {
 }
 
 // Set up initial mode
-void AmbientCO2::begin(Stream &serialPort) {
+bool AmbientCO2::begin(Stream &serialPort) {
   _serial = &serialPort;
 	
 	 // Default to streaming mode
