@@ -8,27 +8,25 @@
 #include <AmbientCO2.h>
 
 // Constructor
-AmbientCO2::AmbientCO2(Stream &serialPort) {
+AmbientCO2::AmbientCO2(void) {
+  _mode = 0;
+}
+
+// Set up initial mode
+void AmbientCO2::begin(Stream &serialPort) {
   _serial = &serialPort;
-  _setup = false;
+	
+	 // Default to streaming mode
+	if (setMode(1) == true) {
+		delay(1000); // Let sensor warm up
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
-// Set up initial state
-void AmbientCO2::begin() {
-
-  // Only run begin() once
-  if (_setup == false) {
-    delay(1000);  // Let sensor warm up
-    _setup = true;
-  }
-}
-
-int AmbientCO2::getCO2() {
-  fillBuffer();
-
-  return parseBuffer();
-}
-
+// Helper function for getCO2() method
 void AmbientCO2::fillBuffer() {
   _index = 0;
 
@@ -40,6 +38,21 @@ void AmbientCO2::fillBuffer() {
   }
 }
 
+int AmbientCO2::getCO2() {
+  fillBuffer();
+
+  return parseBuffer();
+}
+
+int AmbientCO2::getMode() {
+	return _mode;
+}
+
+bool AmbientCO2::isConnected() {
+	return true;
+}
+
+ // Helper function for getCO2() method
 int AmbientCO2::parseBuffer() {
   _value = 0;
 
@@ -48,4 +61,29 @@ int AmbientCO2::parseBuffer() {
   }
 
   return _value; // Value contains e.g '567' as int
+}
+
+bool AmbientCO2::setMode(int sensorMode) {
+	// Command mode
+	if (sensorMode == 0) {
+		_serial->println("K 0");
+		_mode = 0;
+		return true;
+	}
+	// Streaming mode
+	else if (sensorMode == 1) {
+		_serial->println("K 1");
+		_mode = 1;
+		return true;
+	}
+	// Poll mode
+	else if (sensorMode == 2) {
+		_serial->println("K 2");
+		_mode = 2;
+		return true;
+	}
+	// Unknown mode
+	else {
+		return false;
+	}
 }

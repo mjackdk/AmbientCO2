@@ -23,29 +23,23 @@
 
 */
 
-#include <SoftwareSerial.h> // Arduino UNO
-#include <AmbientCO2.h>
+#include <SoftwareSerial.h> // For Arduino UNO
+#include <AmbientCO2.h> // See https://github.com/mjackdk/AmbientCO2
 
-// Change to match board setup
-const byte rxPin = 10;
-const byte txPin = 11;
+SoftwareSerial mySerial(10, 11); // RX, TX
 
-// Do NOT change, Ambient sensors only support 9600
-const int baudRate = 9600;
-
-SoftwareSerial mySerial(rxPin, txPin); // Arduino UNO
-
-AmbientCO2 myAmbient(mySerial);
-
-int co2 = 0;
+AmbientCO2 myAmbient());
 
 void setup() {
-  Serial.begin(baudRate);
-  mySerial.begin(baudRate);
-  myAmbient.begin();
+	Serial.begin(115200);
+	mySerial.begin(9600); // CozIR Ambient sensors only support 9600 baud rate
+
+  if (myAmbient.begin(mySerial) == false) {
+		Serial.println("Not connected to sensor, please check setup");
+		while (1);
+	}
 }
 
 void loop() {
-  co2 = myAmbient.getCO2();
-  Serial.println(co2);
+	Serial.println(myAmbient.getCO2());
 }
