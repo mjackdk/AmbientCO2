@@ -19,6 +19,7 @@ bool AmbientCO2::begin(Stream &serialPort) {
 	 // Default to streaming mode
 	if (setMode(1) == true) {
 		delay(1000); // Let sensor warm up
+		getCO2(); // Discard first reading
 		return true;
 	}
 	else {
