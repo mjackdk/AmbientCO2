@@ -31,13 +31,9 @@ SoftwareSerial mySerial(10, 11); // RX, TX
 AmbientCO2 myAmbient;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   mySerial.begin(9600); // CozIR Ambient sensors only support 9600 baud rate
-
-  if (myAmbient.begin(mySerial) == false) {
-    Serial.println("Not connected to sensor, please check setup");
-    while (1);
-  }
+  myAmbient.begin(mySerial); // Defaults to streaming mode
 }
 
 void loop() {
