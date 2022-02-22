@@ -11,21 +11,21 @@
 #include <Arduino.h>
 
 class AmbientCO2 {
-  public:
-    AmbientCO2(void);
-    bool begin(Stream &serialPort);
-    int getCO2();
-    int getMode();
-    bool isConnected();
-    bool setMode(int sensorMode = 1);
-  private:
-    Stream *_serial; //The generic connection to user's chosen serial hardware
-    int _mode;
-    int _buffer[16];
-    int _index;
-    int _value;
-    void fillBuffer();
-    int parseBuffer();
+	public:
+		AmbientCO2(void);
+		bool begin(Stream &serialPort);
+		int getCO2();
+		int getMode();
+		bool isConnected();
+		bool setMode(int sensorMode = 1);
+	private:
+		Stream *_serial; //The generic connection to user's chosen serial hardware
+		int _mode;
+		int _buffer[16];
+		int _index;
+		int _value;
+		void fillBuffer();
+		int parseBuffer();
 };
 
 #endif
