@@ -7,6 +7,19 @@ The CozIR Ambient family of sensors all provide CO2 measurements, at different r
 This library has been developed using a **CozIR Ambient 0-5000 ppm CO2 (only)** sensor and an **Arduino UNO R3** board.
 
 
+# Background
+
+The sensor sends 8-bit packages (bytes) of data over serial UART. These bytes must be decoded to get a proper measurement, like an integer.
+
+Using a logic analyzer with UART decoding, we can see both the raw bytes from the sensor (D0 and UART: RX bits below) and the decoded data (UART: RX below):
+
+![Ambient CO2 sensor UART output decoded in PulseView](docs/static/AmbientCO2_PulseView.png)
+
+In this example, the sensor sent " Z 01245". The "Z" tells us it is a filtered CO2 measurement, and the value is 1245 ppm.
+
+The library takes care of setting up the sensor for serial UART communication with the Arduino board, and converting the raw bytes into integer values for further use in our Arduino sketches.
+
+
 # Development
 
 Milestone | Features | Version | Status
@@ -19,7 +32,7 @@ Boards | Arduino UNO, Due, MEGA | 3.x.x |
 
 # Library Documentation
 
-Add the following line to use this libraray:
+Add the following line to use this library:
 ``` c++
 #include <AmbientCO2.h>
 ```
